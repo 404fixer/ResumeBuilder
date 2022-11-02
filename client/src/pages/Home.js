@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { decodeToken } from "react-jwt";
 
 export default function Home() {
-    const token = localStorage.getItem("token");
-    const myDecodedToken = decodeToken(token);
+    const user = JSON.parse(localStorage.getItem("user"));
+    const token = user ? user.token : null;
+    const myDecodedToken = token ? decodeToken(token) : null;
 
     const renderButtons = () => {
         if (token && myDecodedToken) {
             return <Link to={"/intro"}>Get Started</Link>;
         } else {
-            if(token && !myDecodedToken) localStorage.removeItem('token')
+            if(token && !myDecodedToken) localStorage.removeItem('user')
             return (
                 <>
                     <Link to={"/login"}>Login</Link>
