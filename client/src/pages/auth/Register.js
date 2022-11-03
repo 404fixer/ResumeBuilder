@@ -23,7 +23,7 @@ export default function Register() {
 
     useEffect(() => {
         if(isError) {
-            toast(message);
+            toast.error(message);
         }
 
         if(isSuccess || user) {
@@ -33,6 +33,7 @@ export default function Register() {
         dispatch(reset());
 
     }, [user, isSuccess, isError, message, navigate, dispatch]);
+
 
     const handleOnChange = (e) => {
         setRegisterData((prevState) => ({
@@ -50,7 +51,7 @@ export default function Register() {
             const userData = { name, email, password };
 
             dispatch(register(userData));
-            navigate('/login');
+            dispatch(reset());
         }
     };
 

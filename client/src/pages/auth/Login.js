@@ -20,7 +20,7 @@ export default function Login() {
 
     useEffect(() => {
         if (isError) {
-            toast(message);
+            toast.error(message);
         }
 
         if (isSuccess || user) {
@@ -43,7 +43,6 @@ export default function Login() {
         const userData = { email, password };
 
         dispatch(login(userData));
-        navigate("/");
     };
 
     if (isLoading) return <Spinner />;

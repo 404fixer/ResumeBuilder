@@ -2,9 +2,11 @@ const asyncHandler = require('express-async-handler');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
+const Resume = require("../models/resumeModel");
 
 // Register User
 const registerUser = asyncHandler(async (req, res) => {
+    console.log(req.body);
     const {name, email, password} = req.body;
     if(!name || !email || !password) {
         res.status(400);
@@ -22,12 +24,21 @@ const registerUser = asyncHandler(async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    const resume = await Resume.create({
+        intro: {
+            name,
+            email,
+        }
+    });
     // Create User
     const user = await User.create({
         name,
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        resume: resume._id
     })
+    
+    console.log(user);
 
     if(user) {
         res.status(201).json({

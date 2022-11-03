@@ -2,6 +2,14 @@ const asyncHandler = require('express-async-handler')
 const jwt = require('jsonwebtoken')
 const User = require('../models/userModel')
 
+const disableAuth = asyncHandler(async (req, res, next) => {
+    if(!req.headers.authorization || !req.headers.authorization.startsWith('Bearer')) {
+        next();
+    } else {
+        throw new Error('Already Logged In.');
+    }
+})
+
 const protect = asyncHandler(async (req, res, next) => {
     let token;
 
@@ -31,4 +39,4 @@ const protect = asyncHandler(async (req, res, next) => {
     }
 }) 
 
-module.exports = {protect}
+module.exports = {protect, disableAuth}

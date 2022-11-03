@@ -13,19 +13,27 @@ export default function Header() {
 
         dispatch(logout());
         dispatch(reset());
-        navigate('/');
+        navigate("/");
     };
 
     return (
         <div>
             <h1>ResumeBuilder</h1>
+            <Link to="/intro" >Introduction</Link>
+            <Link to="/edu" >Education</Link>
+            <Link to="/exp" >Experience</Link>
+            <Link to="/projects" >Projects</Link>
+            <Link to="/achievements" >Achievements</Link>
+            <Link to="/skills" >Skills</Link>
+            <Link to="/profiles" >Profiles</Link>
             {user ? (
                 <>
-                <p>{user._id}</p>
-                <p>{user.name}</p>
-                <p>{user.email}</p>
-                <p>{user.token}</p>
-                <button onClick={(e) => handleLogout(e)}>Logout</button>
+                    <p>{user._id}</p>
+                    <p>{user.name}</p>
+                    <p>{user.email}</p>
+                    <p>{user.token}</p>
+
+                    <button onClick={(e) => handleLogout(e)}>Logout</button>
                 </>
             ) : (
                 <>
