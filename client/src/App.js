@@ -16,6 +16,8 @@ import Projects from "./pages/form/Projects";
 import Achievements from "./pages/form/Achievements";
 import Skills from "./pages/form/Skills";
 import Profiles from "./pages/form/Profiles";
+import User from "./pages/User";
+import Code from "./pages/Code";
 
 function App() {
     return (
@@ -35,6 +37,8 @@ function App() {
                     <Route path="/profiles" element={<Profiles />} />
                     <Route path="/form" element={<Form />} />
                     <Route path="/resume" element={<Resume />} />
+                    <Route path="/user" element={<User />} />
+                    <Route path="/code" element={<Code />} />
                 </Routes>
             </Router>
             <ToastContainer />

@@ -6,7 +6,6 @@ const Resume = require("../models/resumeModel");
 
 // Register User
 const registerUser = asyncHandler(async (req, res) => {
-    console.log(req.body);
     const {name, email, password} = req.body;
     if(!name || !email || !password) {
         res.status(400);
@@ -37,15 +36,18 @@ const registerUser = asyncHandler(async (req, res) => {
         password: hashedPassword,
         resume: resume._id
     })
-    
-    console.log(user);
 
     if(user) {
+        const emailToken = jwt.sign({email}, process.env.JWT_SECRET, {
+            expiresIn: '1d'
+        })
+
+        // verifyUserEmail(name, email, emailToken);
+
         res.status(201).json({
             _id: user._id,
             name: user.name,
             email: user.email,
-            token: generateToken(user._id)
         });
     } else {
         res.status(400);
@@ -70,6 +72,10 @@ const loginUser = asyncHandler(async (req, res) => {
         throw new Error('Invalid Credentials');
     }
 });
+
+// const verifyUserEmail = (name, email, emailToken) => {
+
+// }
 
 // Generate JWT
 const generateToken = (id) => {

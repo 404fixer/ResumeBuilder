@@ -17,7 +17,8 @@ app.use(cors());
 
 // Routes of the app
 app.use('/api/auth', require('./routes/authRoutes'))
-app.use('/api/form/submit', require('./routes/formRoutes'))
+app.use('/api/form/', require('./routes/formRoutes'))
+app.use('/api/resume', require('./routes/resumeRoutes'))
 
 // Error Middleware
 app.use(errorHandler);
