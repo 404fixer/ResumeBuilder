@@ -11,6 +11,7 @@ export default function Resume() {
     const user = useSelector((state) => state.auth.user);
 
     useEffect(() => {
+        console.log('effect');
         if (!user) return navigate("/login");
 
         const token = user.token;
@@ -42,7 +43,7 @@ export default function Resume() {
                     </h2>
                 </div>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
-                    Here is your resume, {user.name}!
+                    Here is your resume, {user && user.name}!
                     {/* <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</Link> */}
                 </p>
             </div>
