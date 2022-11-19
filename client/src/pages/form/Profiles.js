@@ -29,7 +29,7 @@ export default function Profiles() {
         };
 
         axios
-            .get("/api/form/profiles", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/profiles", config)
             .then((res) => {
                 setProfiles(res.data);
             })
@@ -57,7 +57,7 @@ export default function Profiles() {
         };
 
         axios
-            .post("/api/form/profiles", profiles, config)
+            .post(process.env.REACT_APP_SERVER_URL + "/api/form/profiles", profiles, config)
             .then((res) => {
                 navigate("/resume");
                 toast.success('Profiles Details Saved!');

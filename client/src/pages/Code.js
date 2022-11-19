@@ -21,7 +21,7 @@ export default function Code() {
         };
 
         axios
-            .get("/api/resume/code", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/resume/code", config)
             .then((res) => {
                 // console.log(res);
                 setTexCode(res.data);

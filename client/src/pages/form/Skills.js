@@ -29,7 +29,7 @@ export default function Skills() {
         };
 
         axios
-            .get("/api/form/skills", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/skills", config)
             .then((res) => {
                 setSkills(res.data);
             })
@@ -58,7 +58,7 @@ export default function Skills() {
 
         axios
             .post(
-                "/api/form/skills",
+                process.env.REACT_APP_SERVER_URL + "/api/form/skills",
                 skills,
                 config
             )

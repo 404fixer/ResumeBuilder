@@ -34,7 +34,7 @@ export default function Experience() {
         };
 
         axios
-            .get("/api/form/exp", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/exp", config)
             .then((res) => {
                 setExp(res.data);
             })
@@ -66,7 +66,7 @@ export default function Experience() {
         };
 
         axios
-            .post("/api/form/exp", exp, config)
+            .post(process.env.REACT_APP_SERVER_URL + "/api/form/exp", exp, config)
             .then((res) => {
                 navigate("/projects");
                 toast.success('Experience Details Saved!');

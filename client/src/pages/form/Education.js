@@ -34,7 +34,7 @@ export default function Education() {
         };
 
         axios
-            .get("/api/form/edu", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/edu", config)
             .then((res) => {
                 setEdu(res.data);
             })
@@ -67,7 +67,7 @@ export default function Education() {
         };
 
         axios
-            .post("/api/form/edu", edu, config)
+            .post(process.env.REACT_APP_SERVER_URL + "/api/form/edu", edu, config)
             .then((res) => {
                 navigate("/exp");
                 toast.success("Education Details Saved!");

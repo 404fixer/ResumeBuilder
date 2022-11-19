@@ -29,7 +29,7 @@ export default function Intro() {
         };
 
         axios
-            .get("/api/form/intro", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/intro", config)
             .then((res) => {
                 setIntro(res.data);
             })
@@ -64,7 +64,7 @@ export default function Intro() {
         };
 
         axios
-            .post("/api/form/intro", intro, config)
+            .post(process.env.REACT_APP_SERVER_URL + "/api/form/intro", intro, config)
             .then((res) => {
                 navigate("/edu");
                 toast.success("Introduction Details Saved!");

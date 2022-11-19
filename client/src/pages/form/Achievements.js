@@ -30,7 +30,7 @@ export default function Achievements() {
         };
 
         axios
-            .get("/api/form/achievements", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/achievements", config)
             .then((res) => {
                 setAchievements(res.data);
             })
@@ -58,7 +58,7 @@ export default function Achievements() {
         };
 
         axios
-            .post("/api/form/achievements", achievements, config)
+            .post(process.env.REACT_APP_SERVER_URL + "/api/form/achievements", achievements, config)
             .then((res) => {
                 navigate("/skills");
                 toast.success('Achievements Details Saved!');

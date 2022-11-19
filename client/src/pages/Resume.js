@@ -22,7 +22,7 @@ export default function Resume() {
         };
 
         axios
-            .get("/api/resume", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/resume", config)
             .then((res) => {
                 setPdfUrl(res.data);
             })

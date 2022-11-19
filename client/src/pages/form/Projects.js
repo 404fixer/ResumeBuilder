@@ -31,7 +31,7 @@ export default function Projects() {
         };
 
         axios
-            .get("/api/form/projects", config)
+            .get(process.env.REACT_APP_SERVER_URL + "/api/form/projects", config)
             .then((res) => {
                 setProjects(res.data);
             })
@@ -61,7 +61,7 @@ export default function Projects() {
         };
 
         axios
-            .post("/api/form/projects", projects, config)
+            .post(process.env.REACT_APP_SERVER_URL + "/api/form/projects", projects, config)
             .then((res) => {
                 navigate("/achievements");
                 toast.success('Projects Details Saved!');

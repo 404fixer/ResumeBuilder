@@ -4,7 +4,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Home from "./pages/Home";
-import Form from "./components/Form";
 import Resume from "./pages/Resume";
 import Header from "./components/Header"
 import Register from "./pages/auth/Register";
@@ -35,7 +34,6 @@ function App() {
                     <Route path="/achievements" element={<Achievements />} />
                     <Route path="/skills" element={<Skills />} />
                     <Route path="/profiles" element={<Profiles />} />
-                    <Route path="/form" element={<Form />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/user" element={<User />} />
                     <Route path="/code" element={<Code />} />
