@@ -11,7 +11,6 @@ import {
 } from "@heroicons/react/24/solid";
 
 const navigation = [
-    // { name: 'Dashboard', to: '/', current: true },
     { name: "Introduction", to: "/intro", current: false },
     { name: "Education", to: "/edu", current: false },
     { name: "Experience", to: "/exp", current: false },
@@ -116,11 +115,6 @@ export default function Header() {
                                             ) : (
                                                 <ExclamationCircleIcon className="h-8 w-8 text-gray-100" />
                                             )}
-                                            {/* <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      /> */}
                                         </Menu.Button>
                                     </div>
                                     <Transition
@@ -235,31 +229,5 @@ export default function Header() {
                 </>
             )}
         </Disclosure>
-
-        // <div>
-        //     <h1>ResumeBuilder</h1>
-        //     <Link to="/intro" >Introduction</Link>
-        //     <Link to="/edu" >Education</Link>
-        //     <Link to="/exp" >Experience</Link>
-        //     <Link to="/projects" >Projects</Link>
-        //     <Link to="/achievements" >Achievements</Link>
-        //     <Link to="/skills" >Skills</Link>
-        //     <Link to="/profiles" >Profiles</Link>
-        //     {user ? (
-        //         <>
-        //             <p>{user._id}</p>
-        //             <p>{user.name}</p>
-        //             <p>{user.email}</p>
-        //             <p>{user.token}</p>
-
-        //             <button onClick={(e) => handleLogout(e)}>Logout</button>
-        //         </>
-        //     ) : (
-        //         <>
-        //             <Link to="/login">Login</Link>
-        //             <Link to="/register">Register</Link>
-        //         </>
-        //     )}
-        // </div>
     );
 }

@@ -42,27 +42,26 @@ export default function Home() {
                                 <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                                     <span className="text-gray-600">
                                         Welcome to ResumeBuilder
-                                        {user ? 
-                                        <>
-                                            {/* <span
-                                                className="absolute font-semibold text-indigo-600 inset-0"
-                                                aria-hidden="true"
-                                            /> */}
-                                            {", "}
-                                            <span className="font-semibold text-indigo-600">
-                                                {user.name}!
-                                            </span>
+                                        {user ? (
+                                            <>
+                                                {", "}
+                                                <span className="font-semibold text-indigo-600">
+                                                    {user.name}!
+                                                </span>
                                             </>
-                                         : '!'}
-                                            
+                                        ) : (
+                                            "!"
+                                        )}
                                     </span>
                                 </div>
                             </div>
                             <div>
                                 <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                                    Build beautiful {" "}
-                                    <span className="underline decoration-indigo-600">latex resume without writing</span>
-                                    {" "} any code.
+                                    Build beautiful{" "}
+                                    <span className="underline decoration-indigo-600">
+                                        latex resume without writing
+                                    </span>{" "}
+                                    any code.
                                 </h1>
                                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
                                     Fill your introductory, education,
@@ -72,10 +71,10 @@ export default function Home() {
                                 </p>
                                 <div className="mt-8 flex gap-x-4 sm:justify-center">
                                     <Link
-                                        to={user ? '/intro' : '/login'}
+                                        to={user ? "/intro" : "/login"}
                                         className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
                                     >
-                                        {user ? 'Get Started' : 'Login'}
+                                        {user ? "Get Started" : "Login"}
                                         <span
                                             className="text-indigo-200"
                                             aria-hidden="true"
@@ -84,10 +83,10 @@ export default function Home() {
                                         </span>
                                     </Link>
                                     <Link
-                                        to={user ? '/resume' : '/register'}
+                                        to={user ? "/resume" : "/register"}
                                         className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                                     >
-                                        {user ? 'Resume' : 'Register'}
+                                        {user ? "Resume" : "Register"}
                                         <span
                                             className="text-gray-400"
                                             aria-hidden="true"
@@ -131,9 +130,6 @@ export default function Home() {
                     </div>
                 </div>
             </main>
-
-            {/* <h1>Landing Page</h1> */}
-            {/* {renderButtons()} */}
         </div>
     );
 }

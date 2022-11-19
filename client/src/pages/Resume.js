@@ -11,7 +11,7 @@ export default function Resume() {
     const user = useSelector((state) => state.auth.user);
 
     useEffect(() => {
-        console.log('effect');
+        console.log("effect");
         if (!user) return navigate("/login");
 
         const token = user.token;
@@ -44,7 +44,6 @@ export default function Resume() {
                 </div>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Here is your resume, {user && user.name}!
-                    {/* <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</Link> */}
                 </p>
             </div>
 
@@ -53,7 +52,7 @@ export default function Resume() {
                 className="flex flex-row justify-center items-center mx-auto mt-8 rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-semibold text-white shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                 onClick={(e) => handleGetLatexCode(e)}
             >
-                <CodeBracketSquareIcon className="h-6 w-6 mr-1"/>
+                <CodeBracketSquareIcon className="h-6 w-6 mr-1" />
                 Get Latex Code
             </button>
 

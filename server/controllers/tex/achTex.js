@@ -1,6 +1,3 @@
-const asyncHandler = require('express-async-handler');
-const Resume = require('../../models/resumeModel');
-
 const helper = (curr_ach) => {
     const temp = `\\resumeItem{${curr_ach.ach_text} ${curr_ach.ach_link ? `$|$ \\underline{\\emph{\\href{${curr_ach.ach_link ? curr_ach.ach_link : ''}}{Link}}}` : ''}}`
 

@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 import Intro from "./pages/form/Intro";
@@ -22,7 +22,7 @@ function App() {
     return (
         <>
             <Router>
-                <Header/>
+                <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/register" element={<Register />} />

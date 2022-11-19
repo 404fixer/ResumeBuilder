@@ -19,14 +19,7 @@ const getProjectsTex = (projects) => {
         return '';
     }
 
-    for(let i = 0; i<projects.length; i++) {
-        projects[i].project_name = projects[i].project_name.replace(/%/g, "\\%");
-        projects[i].project_github = projects[i].project_github.replace(/%/g, "\\%");
-        projects[i].project_link = projects[i].project_link.replace(/%/g, "\\%");
-        for(let j = 0; j<projects[i].project_desc.length; j++) {
-            projects[i].project_desc[j] = projects[i].project_desc[j].replace(/%/g, "\\%");
-        }
-    }
+    projects = JSON.parse(JSON.stringify(projects).replace(/%/g, '\\\\%'));
 
     projectsTex = 
 `

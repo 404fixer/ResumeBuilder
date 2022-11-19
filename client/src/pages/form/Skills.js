@@ -80,55 +80,41 @@ export default function Skills() {
                 </div>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Please fill your skills details
-                    {/* <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</Link> */}
                 </p>
             </div>
 
             <form onSubmit={handleSkillsSubmit}>
-            {skills.map((e, i) => {
-                return (
-                    <Skill
-                        skills={skills}
-                        setSkills={setSkills}
-                        idx={i}
-                        key={i}
-                    />
-                );
-            })}
+                {skills.map((e, i) => {
+                    return (
+                        <Skill
+                            skills={skills}
+                            setSkills={setSkills}
+                            idx={i}
+                            key={i}
+                        />
+                    );
+                })}
 
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
-                    <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-zinc-700 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-zinc-900"
-                        onClick={addSkill}
-                    >
-                        Add Skill
-                    </button>
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+                    <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
+                        <button
+                            type="button"
+                            className="inline-flex justify-center rounded-md border border-transparent bg-zinc-700 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-zinc-900"
+                            onClick={addSkill}
+                        >
+                            Add Skill
+                        </button>
+                    </div>
+                    <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
+                        <button
+                            type="submit"
+                            className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            Save
+                        </button>
+                    </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
-                    <button
-                        type="submit"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        Save
-                    </button>
-                </div>
-            </div>
             </form>
         </>
-
-        // <div>
-        //   <h1>Skills</h1>
-        // {
-        //   skills.map((e, i) => {
-        //     return <Skill skills={skills} setSkills={setSkills} idx={i} key={i}/>
-        //   })
-        // }
-        //   <button type="button" onClick={addSkill}>
-        //       Add Skill
-        //   </button>
-        //   <button type="submit" onClick={(e) => handleSkillsSubmit(e)}>Submit And Next</button>
-        // </div>
     );
 }

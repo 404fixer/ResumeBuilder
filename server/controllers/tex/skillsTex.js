@@ -12,10 +12,7 @@ const getSkillsTex = (skills) => {
         return '';
     }
 
-    for(let i = 0; i<skills.length; i++) {
-        skills[i].skill_title = skills[i].skill_title.replace(/%/g, "\\%");
-        skills[i].skill_text = skills[i].skill_text.replace(/%/g, "\\%");
-    }
+    skills = JSON.parse(JSON.stringify(skills).replace(/%/g, '\\\\%'));
 
     skillsTex = 
 `

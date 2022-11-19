@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const {errorHandler} = require("./middleware/errorMiddleware");
+const { errorHandler } = require("./middleware/errorMiddleware");
 const dotenv = require("dotenv").config();
 
 const PORT = process.env.PORT || 8001;
@@ -13,12 +13,12 @@ connectDB();
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors()); 
+app.use(cors());
 
 // Routes of the app
-app.use('/api/auth', require('./routes/authRoutes'))
-app.use('/api/form/', require('./routes/formRoutes'))
-app.use('/api/resume', require('./routes/resumeRoutes'))
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/form/", require("./routes/formRoutes"));
+app.use("/api/resume", require("./routes/resumeRoutes"));
 
 // Error Middleware
 app.use(errorHandler);

@@ -152,29 +152,5 @@ export default function Login() {
                 </p>
             </div>
         </div>
-
-
-        // <div>
-        //     <h1>Login</h1>
-        //     <form>
-        //         <input
-        //             type="email"
-        //             name="email"
-        //             value={email}
-        //             onChange={(e) => handleOnChange(e)}
-        //             placeholder="Enter Your Email"
-        //         />
-        //         <input
-        //             type="password"
-        //             name="password"
-        //             value={password}
-        //             onChange={(e) => handleOnChange(e)}
-        //             placeholder="Enter New Password"
-        //         />
-        //         <button type="submit" onClick={(e) => handleSubmitLogin(e)}>
-        //             Login
-        //         </button>
-        //     </form>
-        // </div>
     );
 }

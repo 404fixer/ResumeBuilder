@@ -46,16 +46,6 @@ export default function Intro() {
     const handleIntroSubmit = async (e) => {
         e.preventDefault();
 
-        // if(!intro.name) {
-        //     toast.warning('Please add your name');
-        //     return;
-        // }
-
-        // if(!intro.email) {
-        //     toast.warning('Please add your email');
-        //     return;
-        // }
-
         const token = user.token;
         const config = {
             headers: {
@@ -64,7 +54,11 @@ export default function Intro() {
         };
 
         axios
-            .post(process.env.REACT_APP_SERVER_URL + "/api/form/intro", intro, config)
+            .post(
+                process.env.REACT_APP_SERVER_URL + "/api/form/intro",
+                intro,
+                config
+            )
             .then((res) => {
                 navigate("/edu");
                 toast.success("Introduction Details Saved!");
@@ -83,15 +77,13 @@ export default function Intro() {
                 </div>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Please fill your introductory details
-                    {/* <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</Link> */}
                 </p>
             </div>
 
             <form onSubmit={handleIntroSubmit}>
-            <div className="mt-10 sm:mt-0">
-                {/* <div className="mt-10 mx-auto md:grid md:grid-cols-3 md:gap-6"> */}
-                <div className="mt-10 mx-auto w-8/12 md:w-9/12 max-sm:w-full max-sm:p-2 max-sm:pt-0   ">
-                    <div className="mt-5 md:col-span-2 md:mt-0">
+                <div className="mt-10 sm:mt-0">
+                    <div className="mt-10 mx-auto w-8/12 md:w-9/12 max-sm:w-full max-sm:p-2 max-sm:pt-0   ">
+                        <div className="mt-5 md:col-span-2 md:mt-0">
                             <div className="overflow-hidden shadow sm:rounded-md">
                                 <div className="bg-white px-4 py-5 sm:p-6">
                                     <div className="grid grid-cols-6 gap-6">
@@ -103,7 +95,7 @@ export default function Intro() {
                                                 Full name
                                             </label>
                                             <input
-                                            required
+                                                required
                                                 type="text"
                                                 name="name"
                                                 value={intro.name}
@@ -222,81 +214,21 @@ export default function Intro() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
-                    <button
-                        type="submit"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        Save
-                    </button>
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+                    <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
+                        <button
+                            type="submit"
+                            className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            Save
+                        </button>
+                    </div>
                 </div>
-            </div>
             </form>
         </>
-
-        // <div>
-        //     <h1>Introduction</h1>
-        //     <form>
-        //         <input
-        //             type="text"
-        //             name="name"
-        //             id=""
-        //             value={intro.name}
-        //             placeholder="Enter Your Full Name"
-        //             onChange={(e) => handleChange(e)}
-        //         />
-        //         <input
-        //             type="text"
-        //             name="email"
-        //             id=""
-        //             value={intro.email}
-        //             placeholder="Enter Your Email"
-        //             onChange={(e) => handleChange(e)}
-        //         />
-        //         <input
-        //             type="text"
-        //             name="mob_num"
-        //             id=""
-        //             value={intro.mob_num}
-        //             placeholder="Enter Your Mobile Number with Country Code"
-        //             onChange={(e) => handleChange(e)}
-        //         />
-        //         <input
-        //             type="text"
-        //             name="portfolio_link"
-        //             value={intro.portfolio_link}
-        //             id=""
-        //             placeholder="Enter Your Portfolio Link"
-        //             onChange={(e) => handleChange(e)}
-        //         />
-        //         <input
-        //             type="text"
-        //             name="linkedin"
-        //             id=""
-        //             value={intro.linkedin}
-        //             placeholder="Enter Your LinkedIn Profile Link"
-        //             onChange={(e) => handleChange(e)}
-        //         />
-        //         <input
-        //             type="text"
-        //             name="github"
-        //             id=""
-        //             value={intro.github}
-        //             placeholder="Enter Your Github Profile Link"
-        //             onChange={(e) => handleChange(e)}
-        //         />
-        //         <input
-        //             type="submit"
-        //             onClick={(e) => handleIntroSubmit(e)}
-        //             value="Submit And Next"
-        //         />
-        //     </form>
-        // </div>
     );
 }

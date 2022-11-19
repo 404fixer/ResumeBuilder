@@ -67,7 +67,11 @@ export default function Education() {
         };
 
         axios
-            .post(process.env.REACT_APP_SERVER_URL + "/api/form/edu", edu, config)
+            .post(
+                process.env.REACT_APP_SERVER_URL + "/api/form/edu",
+                edu,
+                config
+            )
             .then((res) => {
                 navigate("/exp");
                 toast.success("Education Details Saved!");
@@ -86,46 +90,36 @@ export default function Education() {
                 </div>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Please fill your education details
-                    {/* <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</Link> */}
                 </p>
             </div>
 
             <form onSubmit={handleEduSubmit}>
-            {edu.map((element, idx) => {
-                return <School edu={edu} setEdu={setEdu} idx={idx} key={idx} />;
-            })}
+                {edu.map((element, idx) => {
+                    return (
+                        <School edu={edu} setEdu={setEdu} idx={idx} key={idx} />
+                    );
+                })}
 
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
-                    <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-zinc-700 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-zinc-900"
-                        onClick={addSchool}
-                    >
-                        Add Education
-                    </button>
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+                    <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
+                        <button
+                            type="button"
+                            className="inline-flex justify-center rounded-md border border-transparent bg-zinc-700 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-zinc-900"
+                            onClick={addSchool}
+                        >
+                            Add Education
+                        </button>
+                    </div>
+                    <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
+                        <button
+                            type="submit"
+                            className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            Save
+                        </button>
+                    </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-2 text-center sm:px-6">
-                    <button
-                        type="submit"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 w-full text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        Save
-                    </button>
-                </div>
-            </div>
             </form>
         </>
-
-        // <div>
-        //     <h1>Education</h1>
-        //     {edu.map((element, idx) => {
-        //         return <School edu={edu} setEdu={setEdu} idx={idx} key={idx} />;
-        //     })}
-        //     <button type="button" onClick={addSchool}>
-        //         Add School
-        //     </button>
-        //     <button type="submit" onClick={(e) => handleEduSubmit(e)}>Submit And Next</button>
-        // </div>
     );
 }

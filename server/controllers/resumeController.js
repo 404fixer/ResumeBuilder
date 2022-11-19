@@ -84,8 +84,7 @@ const updateGithubFile = async (user_id, resume) => {
     };
 
     axios(config)
-        .then(function (response) {
-        })
+        .then(function (response) {})
         .catch(function (error) {
             console.log(error.message);
         });
@@ -144,12 +143,12 @@ const getResume = asyncHandler(async (req, res) => {
             footerTex;
 
         try {
-            if(req.user.isResumeFile) {
+            if (req.user.isResumeFile) {
                 // update existing github file
                 await updateGithubFile(req.user._id, resumeTex);
             } else {
                 await createGithubFile(req.user._id, resumeTex);
-    
+
                 await User.findOneAndUpdate(
                     req.user._id,
                     { isResumeFile: true },
@@ -161,9 +160,8 @@ const getResume = asyncHandler(async (req, res) => {
             res.send(PDF_URL);
         } catch (e) {
             console.log(e.message);
-            throw new Error('Something went wrong!');
+            throw new Error("Something went wrong!");
         }
-
     } catch (e) {
         throw new Error(e.message);
     }

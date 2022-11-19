@@ -26,8 +26,8 @@ export default function Register() {
             toast.error(message);
         }
 
-        if(isSuccess) {
-            navigate('/login');
+        if (isSuccess) {
+            navigate("/login");
         }
 
         if (user) {
@@ -164,47 +164,10 @@ export default function Register() {
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                     >
                         login
-                    </Link>
-                    {" "}to your account
+                    </Link>{" "}
+                    to your account
                 </p>
             </div>
         </div>
-
-        // <div>
-        //     <h1>Register</h1>
-        //     <form>
-        //         <input
-        //             type="text"
-        //             name="name"
-        //             value={name}
-        //             onChange={(e) => handleOnChange(e)}
-        //             placeholder="Enter Your Name"
-        //         />
-        //         <input
-        //             type="email"
-        //             name="email"
-        //             value={email}
-        //             onChange={(e) => handleOnChange(e)}
-        //             placeholder="Enter Your Email"
-        //         />
-        //         <input
-        //             type="password"
-        //             name="password"
-        //             value={password}
-        //             onChange={(e) => handleOnChange(e)}
-        //             placeholder="Enter New Password"
-        //         />
-        //         <input
-        //             type="password"
-        //             name="password2"
-        //             value={password2}
-        //             onChange={(e) => handleOnChange(e)}
-        //             placeholder="Confirm Password"
-        //         />
-        //         <button type="submit" onClick={(e) => handleSubmitRegister(e)}>
-        //             Register
-        //         </button>
-        //     </form>
-        // </div>
     );
 }

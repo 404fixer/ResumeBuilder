@@ -23,7 +23,6 @@ export default function Code() {
         axios
             .get(process.env.REACT_APP_SERVER_URL + "/api/resume/code", config)
             .then((res) => {
-                // console.log(res);
                 setTexCode(res.data);
             })
             .catch((err) => console.log("error", err));
@@ -39,15 +38,12 @@ export default function Code() {
                 </div>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Here is your Latex code of the resume, {user.name}!
-                    {/* <Link to="#" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</Link> */}
                 </p>
             </div>
 
-        
             <div className="mt-10 w-9/12 sm:w-10/12 mx-auto shadow-lg bg-gray-200 p-5">
                 <div className="overflow-x-auto font-mono">{texCode}</div>
             </div>
-
         </div>
     );
 }
