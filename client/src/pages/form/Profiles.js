@@ -7,12 +7,7 @@ import { toast } from "react-toastify";
 import { UsersIcon } from "@heroicons/react/24/solid";
 
 export default function Profiles() {
-    const [profiles, setProfiles] = useState([
-        {
-            profile_link: "",
-            profile_about: "",
-        },
-    ]);
+    const [profiles, setProfiles] = useState([]);
 
     const navigate = useNavigate();
 

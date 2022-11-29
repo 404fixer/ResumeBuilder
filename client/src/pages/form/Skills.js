@@ -7,12 +7,7 @@ import { toast } from "react-toastify";
 import { WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
 
 export default function Skills() {
-    const [skills, setSkills] = useState([
-        {
-            skill_title: "",
-            skill_text: "",
-        },
-    ]);
+    const [skills, setSkills] = useState([]);
 
     const navigate = useNavigate();
 

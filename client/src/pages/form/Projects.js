@@ -7,14 +7,7 @@ import { toast } from "react-toastify";
 import { ClipboardDocumentListIcon } from "@heroicons/react/24/solid";
 
 export default function Projects() {
-    const [projects, setProjects] = useState([
-        {
-            project_name: "",
-            project_link: "",
-            project_github: "",
-            project_desc: [""],
-        },
-    ]);
+    const [projects, setProjects] = useState([]);
 
     const navigate = useNavigate();
 

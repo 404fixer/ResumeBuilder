@@ -7,17 +7,7 @@ import { toast } from "react-toastify";
 import { AcademicCapIcon } from "@heroicons/react/24/solid";
 
 export default function Education() {
-    const [edu, setEdu] = useState([
-        {
-            clg_name: "",
-            clg_location: "",
-            clg_degree: "",
-            clg_major: "",
-            clg_cgpa: "",
-            clg_start_date: "",
-            clg_end_date: "",
-        },
-    ]);
+    const [edu, setEdu] = useState([]);
 
     const navigate = useNavigate();
 

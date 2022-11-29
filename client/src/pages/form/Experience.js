@@ -7,16 +7,7 @@ import { toast } from "react-toastify";
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid";
 
 export default function Experience() {
-    const [exp, setExp] = useState([
-        {
-            company_name: "",
-            job_title: "",
-            job_location: "",
-            job_start_date: "",
-            job_end_date: "",
-            job_desc: [""],
-        },
-    ]);
+    const [exp, setExp] = useState([]);
 
     const navigate = useNavigate();
 

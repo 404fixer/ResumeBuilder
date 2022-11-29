@@ -7,12 +7,7 @@ import { toast } from "react-toastify";
 import { TrophyIcon } from "@heroicons/react/24/solid";
 
 export default function Achievements() {
-    const [achievements, setAchievements] = useState([
-        {
-            ach_text: "",
-            ach_link: "",
-        },
-    ]);
+    const [achievements, setAchievements] = useState([]);
 
     const navigate = useNavigate();
 
